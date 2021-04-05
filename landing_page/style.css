@@ -1,5 +1,5 @@
 #sectionHeader{
-    background-image: url(https://pv-data.net/wp-content/uploads/2021/03/slider1.jpg);
+    background-image: url("pictures/slider1.jpg");
     max-width: 2400px;
     background-position: center;
     margin: auto;
@@ -27,7 +27,7 @@ span p{
     font-weight: 500;
 }
 
-#partner{
+#partner {
     width: 150px;
     height: 105px;
     margin-bottom: 35px;
@@ -68,4 +68,31 @@ span p{
 #footerRight a:hover{
     text-decoration: underline;
     color:lightskyblue;
+}
+
+#placeholder{
+    height: 20vh;
+}
+
+@media only screen and (max-width: 600px) {
+
+    
+
+    
+
+    #threecities {
+       display: none;
+    }
+
+    #sectionHeader {
+        background-image: url("pictures/slider1.jpg");
+        max-width: 2400px;
+        background-position: center;
+        margin: auto;
+        height: 40vh; /* changed vh */
+    }
+
+   
+
+    
 }
