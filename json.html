@@ -7,10 +7,19 @@
 </head>
 <body>
     <header>
-        <h1>Json Bike-sharing Data set</h1>
+        
     </header>
+
+    <section id="geoAPI">
+        <h1>Geolocation API</h1>
+        <button id="getPosition">Show Position</buttonf>
+
+        <div id="position"></div>
+       
+    </section>
     
     <section>
+        <h1>Json Bike-sharing Data set</h1>
         <div id="div1">
             <div id="link"></div>
             
@@ -33,12 +42,30 @@
     
     
     <script>
+        //Geolocation api
 
+        var showPositionButton = document.getElementById("getPosition");
+        showPositionButton.setAttribute("onclick", "getLocation()");
 
+        var divPosition = document.getElementById("position");
+        p = document.createElement("p");
+       
+        divPosition.appendChild(p);
         
+
+        function getLocation() {
+           
+            navigator.geolocation.getCurrentPosition(showPosition);
+  
+        }
+
+        function showPosition(position) {
+             p.innerHTML = "Latitude: " + position.coords.latitude + 
+             "<br>Longitude: " + position.coords.longitude; 
+        }
       
 
-       
+       //Json
             var xmlhttp = new XMLHttpRequest();
             var url = "https://mobility.api.opendatahub.bz.it/v2/flat/BikesharingStation";
 
@@ -68,11 +95,13 @@
 
                     var tabelle = document.getElementById("table1");
                     var tr = document.createElement("tr");
+                    
                     var td1 = document.createElement("td");
                     var td2 = document.createElement("td");
                     var td3 = document.createElement("td");
                     var td4 = document.createElement("td");
                     var td5 = document.createElement("td");
+                    var td6 = document.createElement("td");
 
                     td1.appendChild(document.createTextNode(arr.data[i].sname));
                     var td2Value;
@@ -86,6 +115,7 @@
                     td3.appendChild(document.createTextNode(arr.data[i].scoordinate.x));
                     td4.appendChild(document.createTextNode(arr.data[i].scoordinate.y));
                     td5.appendChild(document.createTextNode(arr.data[i].sorigin));
+                    td6.appendChild(document.createTextNode(i));
                     
 
                     tr.appendChild(td1);
@@ -93,6 +123,7 @@
                     tr.appendChild(td3);
                     tr.appendChild(td4);
                     tr.appendChild(td5);
+                    tr.appendChild(td6);
                    
                    
                     
@@ -103,8 +134,11 @@
                
             }
 
-        
+            
+            
 
+        
+        
         
     </script>
 </body>
