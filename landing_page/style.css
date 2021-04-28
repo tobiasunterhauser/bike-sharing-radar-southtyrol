@@ -72,8 +72,12 @@ span p{
 }
 
 #placeholder{
-    height: 20vh;
+    height: 10vh;
+
 }
+
+
+
 
 @media only screen and (max-width: 600px) {
 
@@ -90,10 +94,14 @@ span p{
         max-width: 2400px;
         background-position: center;
         margin: auto;
-        height: 40vh; /* changed vh */
+        height: 50vh; /* changed vh */
     }
 
+    #map {
+        margin-right: 10vw; /*search better solution so that map isn't on the right side*/
+    }
    
 
-    
+ 
+   
 }
