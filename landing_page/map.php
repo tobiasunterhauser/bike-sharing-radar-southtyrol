@@ -123,7 +123,7 @@
 
         }else{
             var userPosition = L.marker([long, lat]).addTo(map);
-        userPosition.bindPopup("Your Position").openPopup(); // ?php echo $_GET["search"] ?
+        userPosition.bindPopup("Your Position").openPopup(); 
         }
 
 
