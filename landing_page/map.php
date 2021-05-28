@@ -9,94 +9,144 @@
     <link rel="icon" href="https://www.iconexperience.com/_img/g_collection_png/standard/512x512/bicycle.png" type="image" sizes="16x16">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <style>
-        #map{ height: 70vh;   }
-        #searchBar{height: 10vh; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--font awesome icons-->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="getLocation()">
+<body>
      <header>
-     <div class="text-center mt-2 container alert alert-warning" role="alert">
- Simple Website to test java script with API
-</div>
+     
      </header>
 
-     <section   class=" container mt-4">
-     
-     <div class="row">
-     
-         <form class="form-inline justify-content-center col-9" target="_blank" action="map.php" method="GET">
-               
-                    <div class="input-group"  id="searchField">
-                     <input type="hidden" value="" name="long" >
-                     <input type="hidden" value="" name="lat" >
-                        <input type="text" class="form-control" placeholder="Streetname, City or zip code" name="search" id="inputSearch">
-                        <div class="input-group-append">
-                            <button class="btn btn-success shadow" type="submit">Go</button>
-                        </div>
-                    </div>
-                 
-                
-                
-        </form>
-
-        <form class="col-3">
-             
-                <input type="hidden" value="" name="long" id="inputLong">
-                <input type="hidden" value="" name="lat" id="inputLat">
-                <button class="btn btn-secondary" type="submit">Show my positon</button> <!--add php get method so that new marker gets created with coordinates-->
-
-        </form>
-        </div>
-
-     </section>
+     <!--search bar start-->
 
      
+    <section class="jumbotron jumbatron.fluid  bg-light text-center shadow" id="sectionHeaderMap">
 
-     <section id="map" class="container mt-4"></section>
+        <!--display on mobile with css display attribute-->
 
-     
-    
-
-    <!-- shows json data as a table-->
-    <section class="container text-center" >
         
-        <div id="div1" >
-            <h3>Raw JSON Data provided by the open data hub</h2>
-            <div >
-                <h5><a id="link"></a></h5> 
-                <div id="buttons">
-                    <!--add buttons to filter content-->
-                    
-                </div>
-                <p id="notActive"></p>
 
-                <table id="table1">
-                    <tr>
-                        <th>Name</th>
-                        <th></th>
-                        <th>X-Coordinate</th>
-                        <th>Y-Coordinate</th>
-                        <th>Origin</th>
-                        <th>Active</th>
-                        <th>Bays available</th>
+            <span class="container">
+
+                <div class="card " id="card-map">
+                    <div class="card-body my-auto">
+                       
+                    <div class="placeholder3"></div>
+
+                    <div class="row">
+                           <div class="col-xl-10 col-lg-8 col-md-8 col-12" id="searchBarMap">
+
+                                  <form class="input-group ms-3  header-buttons" id="searchField" target="_blank" action="map.php" method="GET">
+                                            
+                                            <input type="text" class="form-control rounded" id="searchInput" placeholder="Streetname, City or zip code" name="search">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-success shadow btn-lg" id="searchButton" type="submit">Go</button>
+                                            </div>
+                                    </form>
+                             </div>
                         
-                        <th>Count</th>
-                    </tr>
+                          
+                       
+                                <div class="col-xl-2 col-lg-4 col-12 col-md-4">
+                                        <button class="btn btn-dark btn-lg header-buttons" id="gpsButton" onclick="getLocation();">GPS Position<i class="ms-2 fa fa-location-arrow" src="#"></i></button>
+                                </div>
+                           
+                            
+                    </div>
+                        
+                        <div class="placeholder3"></div>
+                    </div>
 
-                </table>
-            </div>  
-           
-        </div>
-        
+                </div>
+
+          <div class="placeholder3"></div>
+
+         <div class="">
+  
+                <section id="map"></section>
+
+         </div>
+
+            </span>
+   
     </section>
 
 
-    <section id="map" class="container"></section>
-    <script>
-        
+     <!--search bar end-->
+
+
+     <footer class="footer bg-dark text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <!--social media icons on the left-->
+                <div class="col-xl-3 col-12 " id="footerLeft">
+                    <a class="btn btn-outline-light btn-floating " href="#!" role="button">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <i class="fa fa-youtube-play"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <i class="fa fa-linkedin-square"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                        <i class="fa fa-twitter-square"></i>
+                    </a>
+                </div>
+
+                <!--newsletter sigup-->
+                <div class="col-xl-6 col-12" id="footerCenter">
+                    <section class="">
+                        <form action=""> <!--add get method to con-->
+
+                            <div class="row d-flex justify-content-center">
+
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong>Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-5 col-12">
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" class="form-control" placeholder="example@com" />
+
+                                    </div>
+                                </div>
+
+                                <div class="col-auto">
+
+                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </section>
+                </div>
+                <!--links to privacy, impressum etc on the right-->
+                <div class="col-xl-3 col-12" id="footerRight">
+                    <a href="#">Privacy</a>
+                    <a href="#">Impressum</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <p>© 2020 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
+
+        </div>
+    </footer>
+
+
     
-        //
+    <script>
+    
         var map = L.map('map'); 
 
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=rtwXzaPknPj5CuAX8Sto', {
@@ -106,80 +156,10 @@
 
         map.setZoom(14); //default zoom
         
-        //set values for user marker
-        
-      
-        
-        var long = <?php Print($_GET["long"])?> + "";
-        var lat = <?php Print($_GET["lat"])?> + "";
-
-      
-
-        if(long == ""){
-        long = 46.4907; //default bozen if no value is passed
-        lat = 11.3398;
-
-         
-
-        }else{
-            var userPosition = L.marker([long, lat]).addTo(map);
-        userPosition.bindPopup("Your Position").openPopup(); 
-        }
-
-
-
-        
-        
-
-      
-        
-        
-        
-       
-        
-       
-       
-        
-        //Geolocation api set value of hidden input types to send php get method with long & lat
-
-        var inputLong = document.getElementById("inputLong");
-        var inputLat = document.getElementById("inputLat");
-
-        function getLocation() {
-           
-     
-         navigator.geolocation.getCurrentPosition(showPosition);
-        
-        
-
-
-           
-
-        }
-
-        
-
-        function showPosition(position) {
-            inputLong.value = position.coords.latitude;
-             inputLat.value = position.coords.longitude; 
-        }
-
-
-      //execute getLocation function onload of body
-      var body = document.body;
-        body.setAttribute("onload", "getLocation()");
-      
-
-       //JSON form open data hub
+               //JSON form open data hub
             var xmlhttp = new XMLHttpRequest();
             var url = "https://mobility.api.opendatahub.bz.it/v2/flat/BikesharingStation";
 
-            var a = document.createElement("a");
-        a.href = url;
-    
-            a.appendChild(document.createTextNode(url));
-            var linkDiv = document.getElementById("link");
-            linkDiv.appendChild(a);
        
         var myArr;
             
@@ -192,11 +172,6 @@
             };
             xmlhttp.open("GET", url, true);
         xmlhttp.send();
-
-        var notActive = 0;
-        var tabelle = document.getElementById("table1");
-
-
         
 
         function showData() {
@@ -204,13 +179,13 @@
             var i;
             for (i = 0; i < myArr.data.length; i++) {
                 
-                //var xc = myArr.data[i].scoordinate.x;
+                var xc = myArr.data[i].scoordinate.x;
 
-               //if(xc < 12 && xc > 11){ //filter out only data in southtyrol 
+               if(xc < 12 && xc > 11){ 
                     showThisLine(myArr.data[i]);
-               // }
+               }
                 
-                map.setView([long, lat]);
+                map.setView([46.4907, 11.3398]);
                         
  
                 }
@@ -218,31 +193,10 @@
     
                
         }
-        var lineCount = 0;
+       
         //function which adds line to table
         function showThisLine(arrayLine) {
-            var tr = document.createElement("tr");
-
-            lineCount++;
-
-            //function which adds a td child to the tr parent
-            function addTD(value) {
-                var td = document.createElement("td");
-                td.appendChild(document.createTextNode(value));
-                tr.appendChild(td);
-            }
-
-
-            function addTDLink(url, label) {
-                var td = document.createElement("td");
-                var a = document.createElement("a");
-                a.href = url;
-                a.appendChild(document.createTextNode(label));
-                td.appendChild(a);
-                tr.appendChild(td);
-            }
-
-
+  
             var name = arrayLine.sname;
             var active = arrayLine.sactive;
             var x = arrayLine.scoordinate.x;
@@ -262,36 +216,64 @@
                 url = "https://www.papinsport.com/";
             }
             
+            var bays_text = "";
+            if(typeof totalBays != 'undefined'){
+                bays_text = "<a>Total Bays: " + totalBays + "</a><br>";
+            }
 
+
+
+
+            var markerText = "<div class=\"text-center\"><h6>" + name + "</h6>" + bays_text + "<button class=\"btn btn-success btn-sm mt-2\" onclick=\"location.href='" + url + "'\">Link to Service</button></div>";
 
              var markerNew = L.marker([y, x]).addTo(map);
-                markerNew.bindPopup(name).openPopup();
-
-            addTD(name);
-            addTDLink(url, "Link to Service");
-            addTD(x);
-            addTD(y);
-            addTD(origin);
-            addTD(active);
-            addTD(totalBays);
-            
-            addTD(lineCount);
-            
-            
-
-
-
-
-
-
-            tabelle.appendChild(tr);
+                markerNew.bindPopup(markerText);
         }
 
-       /*
-       add reverse geocoding api to use values form searchBar
-       ask only one time for position
-       */
+
+        
+        function addPositionMarker(longIn, latIn){
+            var userPosition = L.marker([longIn, latIn]).addTo(map);
+            userPosition.bindPopup("<h6>Your are here!</h6>").openPopup(); 
+             map.setView([longIn, latIn]);
+        }
+        
        
+
+         function getLocation() {
+           
+     
+         navigator.geolocation.getCurrentPosition(showPosition);
+
+        }
+
+        function showPosition(position) {
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude; 
+
+            addPositionMarker(lat, long);
+        }
+        
+        var searchInputField = document.getElementById("searchInput");
+       
+     
+
+        var searchTerm = "<?php Print($_GET["search"])?>";
+
+            if(searchTerm == 'userPosition'){
+                getLocation();
+            }
+            else{
+             searchInputField.value = searchTerm;
+
+             //geacoding api gets searchTerm and returns lat & long 
+
+             // addPositonMarker(lat,long);
+            }
+      
+        
+       
+
         
     </script>
 </body>

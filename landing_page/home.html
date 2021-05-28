@@ -45,44 +45,84 @@
 
         <!--display on mobile with css display attribute-->
 
-        
+        <span class="container" id="cta-mobile">
 
-            <span class="container" id="cta-mobile">
+            <div class="card " id="card-mobile">
+                <div class="card-body my-auto">
+                    <div class="placeholder3"></div>
+                    <h5 class=" display-6 align-middle color text-dark" id="mainHeader">Bike-Sharing Radar Southtyrol</h5>
+                    <div class="placeholder3"></div>
+                    <form class="input-group" id="searchField" target="_blank" action="map.php" method="GET">
 
-                <div class="card " id="card-mobile">
-                    <div class="card-body my-auto">
-                        <div class="placeholder3"></div>
-                        <h5 class=" display-6 align-middle color text-dark" id="mainHeader">Bike-Sharing Radar Southtyrol</h5>
-                        <div class="placeholder3"></div>
-                        <form class="input-group" id="searchField" target="_blank" action="map.php" method="GET">
-                            <input type="hidden" value="" name="long">
-                            <input type="hidden" value="" name="lat">
-                            <input type="text" class="form-control rounded" placeholder="Streetname, City or zip code" name="search">
-                            <div class="input-group-append">
-                                <button class="btn btn-success shadow btn-lg" type="submit">Go</button>
-                            </div>
-                        </form>
-                        <div class="placeholder3"></div>
-                        <h5 class="text-bold">
-                            or use
-                        </h5>
-                        <div class="placeholder2"></div>
-                        <form target="blank" action="map.php" method="GET">
+                        <input type="text" class="form-control rounded" placeholder="Streetname, City or zip code" name="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-success shadow btn-lg" type="submit">Go</button>
+                        </div>
+                    </form>
+                    <div class="placeholder3"></div>
+                    <h5 class="text-bold">
+                        or use
+                    </h5>
+                    <div class="placeholder2"></div>
+                    <form target="blank" action="map.php" method="GET">
 
-                            <input type="hidden" value="" name="long" id="inputLong">
-                            <input type="hidden" value="" name="lat" id="inputLat">
-                            <input type="hidden" value="" name="search">
-                            <button class="btn btn-dark btn-lg" type="submit">GPS Position<i class="ms-2 fa fa-location-arrow" src="#"></i></button>
 
-                        </form>
-                        <div class="placeholder3"></div>
-                    </div>
+                        <input type="hidden" value="" name="search">
+                        <button class="btn btn-dark btn-lg" type="submit">GPS Position<i class="ms-2 fa fa-location-arrow" src="#"></i></button>
 
+                    </form>
+                    <div class="placeholder3"></div>
                 </div>
 
-            </span>
+            </div>
 
-    
+
+            <div id="threecities">
+
+                <!--suggestions of the three main cities on desktop-->
+                <div  class="row mt-5 ms-5 me-5 mb-2">
+                    <div class="col-xl-3"></div>
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card shadow" style="margin: auto;">
+
+                                    <img href="#" src="pictures/meran.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+
+                                        <a href="#" class="btn">Meran</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <img src="pictures/bozen.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body bg-light">
+
+                                        <a href="#" class="btn ">Bozen</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <img src="pictures/bruneck.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body ">
+
+                                        <a href="#" class="btn ">Bruneck</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-3"></div>
+
+
+
+                </div>
+            </div>
+
+        </span>
 
 
         <span class="container" id="cta-desktop">
@@ -99,8 +139,7 @@
                     <div class="col-3 col-xl-2">
                         <form target="blank" action="map.php" method="GET">
 
-                            <input type="hidden" value="" name="long" id="inputLong">
-                            <input type="hidden" value="" name="lat" id="inputLat">
+                            
                             <input type="hidden" value="" name="search">
                             <button class="btn btn-dark" type="submit">GPS Position<i class="ms-2 fa fa-location-arrow" src="#"></i></button> <!--add php get method so that new marker gets created with coordinates-->
 
@@ -111,22 +150,17 @@
 
                     <div class="col-7 col-lg-4">
                         <form class="input-group mb-3" id="searchField" target="_blank" action="map.php" method="GET">
-                            <input type="hidden" value="" name="long">
-                            <input type="hidden" value="" name="lat">
+                           
                             <input type="text" class="form-control" placeholder="Streetname, City or zip code" name="search">
                             <div class="input-group-append">
                                 <button class="btn btn-success shadow" type="submit">Go</button>
                             </div>
                         </form>
 
-
-
                     </div>
                     <div class="col-1 col-xl-3">
 
                     </div>
-
-
 
             </section>
 
@@ -193,7 +227,7 @@
                 <p class="lead">In todays cities it´s very important to have some alternative means of transport. Our goal is to create a website that makes it easy to find Bike-sharing bikes. We have focused our service on Southtyrol only.</p>
             </div>
             <div class="col-md-6 col-lg-6">
-                <a href="#"><img src="pictures/exMap.png" class="shadow w-75 float-end rounded" id="map" /></a>
+                <a href="#"><img src="pictures/exMap.png" class="shadow w-75 float-end rounded"  /></a>
             </div>
 
         </div>
@@ -279,6 +313,7 @@
     <section id="placeholder" class="container-fluid bg-white"></section>
 
     <footer class="footer bg-dark text-white">
+        <div class="placeholder3"></div>
         <div class="container-fluid">
             <div class="row">
                 <!--social media icons on the left-->
@@ -303,7 +338,8 @@
                 <!--newsletter sigup-->
                 <div class="col-xl-6 col-12" id="footerCenter">
                     <section class="">
-                        <form action=""> <!--add get method to con-->
+                        <form action="">
+                            <!--add get method to con-->
 
                             <div class="row d-flex justify-content-center">
 
@@ -340,9 +376,11 @@
                 </div>
             </div>
         </div>
+        <div class="placeholder3"></div>
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="placeholder3"></div>
             <p>© 2020 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
-
+            
         </div>
     </footer>
 
@@ -350,27 +388,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script>
-        //Geolocation api set value of hidden input types to send php get method with long & lat
-
-        var inputLong = document.getElementById("inputLong");
-        var inputLat = document.getElementById("inputLat");
-
-        function getLocation() {
-
-            navigator.geolocation.getCurrentPosition(showPosition);
-
-        }
-
-
-
-        function showPosition(position) {
-            inputLong.value = position.coords.latitude;
-            inputLat.value = position.coords.longitude;
-        }
-
-        var body = document.body;
-        body.setAttribute("onload", "getLocation()");
-    </script>
+   
 </body>
 </html>
