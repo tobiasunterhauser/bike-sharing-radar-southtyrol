@@ -80,7 +80,7 @@
             <div id="threecities">
 
                 <!--suggestions of the three main cities on desktop-->
-                <div  class="row mt-5 ms-5 me-5 mb-2">
+                <div class="row mt-5 ms-5 me-5 mb-2">
                     <div class="col-xl-3"></div>
                     <div class="col-xl-6">
                         <div class="row">
@@ -139,7 +139,7 @@
                     <div class="col-3 col-xl-2">
                         <form target="blank" action="map.php" method="GET">
 
-                            
+
                             <input type="hidden" value="" name="search">
                             <button class="btn btn-dark" type="submit">GPS Position<i class="ms-2 fa fa-location-arrow" src="#"></i></button> <!--add php get method so that new marker gets created with coordinates-->
 
@@ -150,7 +150,7 @@
 
                     <div class="col-7 col-lg-4">
                         <form class="input-group mb-3" id="searchField" target="_blank" action="map.php" method="GET">
-                           
+
                             <input type="text" class="form-control" placeholder="Streetname, City or zip code" name="search">
                             <div class="input-group-append">
                                 <button class="btn btn-success shadow" type="submit">Go</button>
@@ -227,7 +227,7 @@
                 <p class="lead">In todays cities it´s very important to have some alternative means of transport. Our goal is to create a website that makes it easy to find Bike-sharing bikes. We have focused our service on Southtyrol only.</p>
             </div>
             <div class="col-md-6 col-lg-6">
-                <a href="#"><img src="pictures/exMap.png" class="shadow w-75 float-end rounded"  /></a>
+                <a href="#"><img src="pictures/exMap.png" class="shadow w-75 float-end rounded" /></a>
             </div>
 
         </div>
@@ -308,6 +308,74 @@
         </div>
     </section>
 
+    <section id="placeholder" class="container-fluid bg-white"></section>
+
+    <!--form newsletter-->
+
+    <section class="container-fluid bg-light" id="team">
+        <div id="placeholder"></div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2>News</h2>
+                    <p class="lead pe-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <form action="subscription.php" method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingFirstName" name="firstname" placeholder="">
+                                    <label for="floatingFirstName">Firstname</label>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingLastName" name="lastname" placeholder="">
+                                    <label for="floatingLastName">Lastname</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingEmail" placeholder="" name="mail" required>
+                            <label for="floatingEmail">Email-Address</label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <span class="align-middle">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        I want to recive Newsletters
+                                    </label>
+                                </span>
+                                
+                            </div>
+                            <div class="col-4">
+                                <div class="pull-right">
+                                    <button class="btn btn-success btn-lg" type="submit">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+            </div>
+
+            <div id="placeholder"></div>
+    </section>
+
+
+
+
 
     <section id="placeholder" class="container-fluid bg-white"></section>
     <section id="placeholder" class="container-fluid bg-white"></section>
@@ -337,9 +405,9 @@
 
                 <!--newsletter sigup-->
                 <div class="col-xl-6 col-12" id="footerCenter">
-                    <section class="">
+                    <!--section class="">
                         <form action="">
-                            <!--add get method to con-->
+                           
 
                             <div class="row d-flex justify-content-center">
 
@@ -367,7 +435,7 @@
                             </div>
 
                         </form>
-                    </section>
+                    </section-->
                 </div>
                 <!--links to privacy, impressum etc on the right-->
                 <div class="col-xl-3 col-12" id="footerRight">
@@ -380,7 +448,7 @@
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             <div class="placeholder3"></div>
             <p>© 2020 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
-            
+
         </div>
     </footer>
 
@@ -388,6 +456,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-   
+
 </body>
 </html>
