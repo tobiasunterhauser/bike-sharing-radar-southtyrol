@@ -17,6 +17,8 @@
      
      </header>
 
+     <h1 hidden>accessibility</h1>
+
      <!--search bar start-->
 
      
@@ -36,12 +38,13 @@
                     <div class="row">
                            <div class="col-xl-10 col-lg-8 col-md-8 col-12" id="searchBarMap">
 
-                                  <form class="input-group ms-3  header-buttons" id="searchField" target="_blank" action="map.php" method="GET">
-                                            
-                                            <input type="text" class="form-control rounded" id="searchInput" placeholder="Streetname, City or zip code" name="search">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-success shadow btn-lg" id="searchButton" type="submit">Go</button>
-                                            </div>
+                                  <form id="searchField" target="_blank" action="map.php" method="GET">
+                                            <label class="input-group ms-3  header-buttons">
+                                                <input type="text" class="form-control rounded" id="searchInput" placeholder="Streetname, City or zip code" name="search">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-success shadow btn-lg" id="searchButton" type="submit">Go</button>
+                                                </div>
+                                            </label>
                                     </form>
                              </div>
                         
@@ -80,19 +83,24 @@
             <div class="row">
                 <!--social media icons on the left-->
                 <div class="col-xl-3 col-12 " id="footerLeft">
-                    <a class="btn btn-outline-light btn-floating " href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating " href="#" role="button">
+                        <label hidden>Facebook Links</label>
                         <i class="fa fa-facebook-square"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Instagram Links</label>
                         <i class="fa fa-instagram"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Youtube Links</label>
                         <i class="fa fa-youtube-play"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>LinkedIn Links</label>
                         <i class="fa fa-linkedin-square"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Twitter Links</label>
                         <i class="fa fa-twitter-square"></i>
                     </a>
                 </div>
@@ -101,32 +109,32 @@
                 <div class="col-xl-6 col-12" id="footerCenter">
                     <section class="">
                         <form action=""> <!--add get method to con-->
+                            <label>
+                                <div class="row d-flex justify-content-center">
 
-                            <div class="row d-flex justify-content-center">
-
-                                <div class="col-auto">
-                                    <p class="pt-2">
-                                        <strong>Sign up for our newsletter</strong>
-                                    </p>
-                                </div>
-
-                                <div class="col-md-5 col-12">
-
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="email" class="form-control" placeholder="example@com" />
-
+                                    <div class="col-auto">
+                                        <p class="pt-2">
+                                            <strong style="color: white;">Sign up for our newsletter</strong>
+                                        </p>
                                     </div>
+
+                                    <div class="col-md-5 col-12">
+
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="email" class="form-control" placeholder="example@com" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-auto">
+
+                                        <button type="submit" class="btn btn-outline-light mb-4">
+                                            Subscribe
+                                        </button>
+                                    </div>
+
                                 </div>
-
-                                <div class="col-auto">
-
-                                    <button type="submit" class="btn btn-outline-light mb-4">
-                                        Subscribe
-                                    </button>
-                                </div>
-
-                            </div>
-
+                            </label>
                         </form>
                     </section>
                 </div>
@@ -138,7 +146,7 @@
             </div>
         </div>
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            <p>© 2020 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
+            <p>ï¿½ 2020 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
 
         </div>
     </footer>

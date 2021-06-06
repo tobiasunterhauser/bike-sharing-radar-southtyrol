@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-
+        <h1 hidden>accessibility</h1>
         <nav class="navbar navbar-expand" id="topNavigation">
 
             <ul class="navbar-nav justify-content-center w-100 text-center">
@@ -50,15 +50,19 @@
             <div class="card " id="card-mobile">
                 <div class="card-body my-auto">
                     <div class="placeholder3"></div>
+                    <h2 hidden>accessibility</h2>
+                    <h3 hidden>accessibility</h3>
+                    <h4 hidden>accessibility</h4>
                     <h5 class=" display-6 align-middle color text-dark" id="mainHeader">Bike-Sharing Radar Southtyrol</h5>
                     <div class="placeholder3"></div>
-                    <form class="input-group" id="searchField" target="_blank" action="map.php" method="GET">
-
-                        <input type="text" class="form-control rounded" placeholder="Streetname, City or zip code" name="search">
-                        <div class="input-group-append">
-                            <button class="btn btn-success shadow btn-lg" type="submit">Go</button>
-                        </div>
-                    </form>
+                        <form id="searchField" target="_blank" action="map.php" method="GET">
+                            <label class="input-group">
+                                <input type="text" class="form-control rounded" placeholder="Streetname, City or zip code" name="search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success shadow btn-lg" type="submit">Go</button>
+                                </div>
+                            </label>
+                        </form>
                     <div class="placeholder3"></div>
                     <h5 class="text-bold">
                         or use
@@ -149,12 +153,13 @@
                     </div>
 
                     <div class="col-7 col-lg-4">
-                        <form class="input-group mb-3" id="searchField" target="_blank" action="map.php" method="GET">
-
-                            <input type="text" class="form-control" placeholder="Streetname, City or zip code" name="search">
-                            <div class="input-group-append">
-                                <button class="btn btn-success shadow" type="submit">Go</button>
-                            </div>
+                        <form id="searchField" target="_blank" action="map.php" method="GET">
+                            <label class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Streetname, City or zip code" name="search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success shadow" type="submit">Go</button>
+                                </div>
+                            </label>
                         </form>
 
                     </div>
@@ -184,7 +189,7 @@
                 <p class="lead">In todays cities it´s very important to have some alternative means of transport. Our goal is to create a website that makes it easy to find Bike-sharing bikes. We have focused our service on Southtyrol only.</p>
             </div>
             <div class="col-md-6 col-lg-6">
-                <a href="#"><img src="pictures/exMap.png" class="shadow w-75 float-end rounded" /></a>
+                <a href="#"><img alt="Example Map" src="pictures/exMap.png" class="shadow w-75 float-end rounded" /></a>
             </div>
 
         </div>
@@ -208,8 +213,10 @@
 
             <div class="row mt-5 pb-5">
                 <div class="col-12 col-md-6 text-center mt-5 ">
-                    <img class="rounded-circle m-3" src="pictures/jonas.png" alt="Generic placeholder image" width="140" height="140">
+                    <img class="rounded-circle m-3" src="pictures/jonas.png" alt="Jonas Gatterer" width="140" height="140">
                     <h2>Jonas Gatterer</h2>
+                    <h3 hidden>accessibility</h3>
+                    <h4 hidden>accessibility</h4>
                     <h5>Co-Founder</h5>
                     <div class="row ">
                         <div class="col-lg-2"></div>
@@ -217,15 +224,17 @@
                         <div class="col-lg-2"></div>
                     </div>
                     <div>
-                        <a href="#"><i class="fa fa-github-square fa-2x m-2" src="#"></i></a>
-                        <a href="#"><i class="fa fa-linkedin-square fa-2x m-2" src="#"></i></a>
-                        <a href="#"><i class="fa fa-stack-overflow fa-2x m-2" src="#"></i></a>
+                        <a href="#"><label hidden>Github Jonas Gatterer</label><i class="fa fa-github-square fa-2x m-2" src="#"></i></a>
+                        <a href="#"><label hidden>LinkedIn Jonas Gatterer</label><i class="fa fa-linkedin-square fa-2x m-2" src="#"></i></a>
+                        <a href="#"><label hidden>Stack-Overflow Jonas Gatterer</label><i class="fa fa-stack-overflow fa-2x m-2" src="#"></i></a>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 text-center mt-5 ">
-                    <img class="rounded-circle m-3" src="pictures/tobias.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <img class="rounded-circle m-3" src="pictures/tobias.jpg" alt="Tobias Unterhauser" width="140" height="140">
                     <h2>Tobias Unterhauser</h2>
+                    <h3 hidden>accessibility</h3>
+                    <h4 hidden>accessibility</h4>
                     <h5>Co-Founder</h5>
                     <div class="row mb-3 ">
                         <div class="col-lg-2"></div>
@@ -233,9 +242,9 @@
                         <div class="col-lg-2"></div>
                     </div>
                     <div>
-                        <a href="#"><i class="fa fa-github-square fa-2x m-2" src="#"></i></a>
-                        <a href="#"><i class="fa fa-linkedin-square fa-2x m-2" src="#"></i></a>
-                        <a href="#"><i class="fa fa-stack-overflow fa-2x m-2" src="#"></i></a>
+                        <a href="#"><label hidden>Github Tobias Unterhauser</label><i class="fa fa-github-square fa-2x m-2" src="#"></i></a>
+                        <a href="#"><label hidden>LinkedIn Tobias Unterhauser</label><i class="fa fa-linkedin-square fa-2x m-2" src="#"></i></a>
+                        <a href="#"><label hidden>Stack-Overflow Tobias Unterhauser</label><i class="fa fa-stack-overflow fa-2x m-2" src="#"></i></a>
                     </div>
 
                 </div>
@@ -255,8 +264,8 @@
     <section class="container" id="Partner">
         <div class="row">
             <div class="col-lg-4 mt-4 order-2 order-lg-1">
-                <a href="https://www.unibz.it/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Free_University_of_Bozen-Bolzano_logo.svg/1200px-Free_University_of_Bozen-Bolzano_logo.svg.png" class="img-thumbnail" id="partner" /></a>
-                <a href="https://opendatahub.readthedocs.io/en/latest/index.html"><img src="https://opendatahub.bz.it/img/logo-open-data-hub.png" id="partner" class="img-thumbnail" /></a>
+                <a href="https://www.unibz.it/"><img alt="University of Bolzano" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Free_University_of_Bozen-Bolzano_logo.svg/1200px-Free_University_of_Bozen-Bolzano_logo.svg.png" class="img-thumbnail" id="partner" /></a>
+                <a href="https://opendatahub.readthedocs.io/en/latest/index.html"><img alt="Open Data Hub" src="https://opendatahub.bz.it/img/logo-open-data-hub.png" id="partner" class="img-thumbnail" /></a>
             </div>
             <div class="col-lg-8 order-1 order-lg-2">
                 <h2>Partner</h2>
@@ -343,19 +352,24 @@
             <div class="row">
                 <!--social media icons on the left-->
                 <div class="col-xl-3 col-12 " id="footerLeft">
-                    <a class="btn btn-outline-light btn-floating " href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating " href="#" role="button">
+                        <label hidden>Facebook Link</label>
                         <i class="fa fa-facebook-square"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Instagram Link</label>
                         <i class="fa fa-instagram"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Youtube Link</label>
                         <i class="fa fa-youtube-play"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>LinkedIn Link</label>
                         <i class="fa fa-linkedin-square"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Twitter Link</label>
                         <i class="fa fa-twitter-square"></i>
                     </a>
                 </div>
