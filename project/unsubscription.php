@@ -44,7 +44,7 @@
 
 
                 <div class="card-body text-center margin_vh_top margin_vh_bottom ">
-                    <i class="fa fa-remove icon100"></i>
+                    <i class="fa fa-times icon100"></i>
                     <h3 class="card-title margin_vh_bottom margin_vh_top" id="response-text">We are sorry to see you go.</h3>
 
 

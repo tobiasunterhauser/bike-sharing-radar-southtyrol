@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--font awesome icons-->
+    
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
      <header>
-     
+        <!-- no header-->
      </header>
 
      <!--search bar start-->
@@ -36,23 +37,27 @@
                     <div class="row">
                            <div class="col-xl-10 col-lg-8 col-md-8 col-12" id="searchBarMap">
 
-                                  <form class="input-group ms-3  header-buttons" id="searchField" target="_blank" action="map.php" method="GET">
+                                    <!--target="_blank" action="map.php" method="GET"-->
+
+                                  <div class="input-group ms-3  header-buttons" id="searchField" >
                                             
-                                            <input type="text" class="form-control rounded" id="searchInput" placeholder="Streetname, City or zip code" name="search">
+                                            <input autocomplete="off" type="text" class="form-control rounded" id="searchInput" placeholder="Streetname, City or zip code" name="search">
+                                            
                                             <div class="input-group-append">
-                                                <button class="btn btn-success shadow btn-lg" id="searchButton" type="submit">Go</button>
+                                                <button class="btn btn-success shadow btn-lg" id="searchButton" onclick="geocode()">Go</button>
                                             </div>
-                                    </form>
+                                    </div>
+                                    <div id="result-list" class="text-start">
+                                             </div>
                              </div>
-                        
-                          
-                       
+
                                 <div class="col-xl-2 col-lg-4 col-12 col-md-4">
                                         <button class="btn btn-dark btn-lg header-buttons" id="gpsButton" onclick="getLocation();">GPS Position<i class="ms-2 fa fa-location-arrow" src="#"></i></button>
                                 </div>
                            
                             
                     </div>
+                     
                         
                         <div class="placeholder3"></div>
                     </div>
@@ -76,6 +81,7 @@
 
 
      <footer class="footer bg-dark text-white">
+        <div class="placeholder3"></div>
         <div class="container-fluid">
             <div class="row">
                 <!--social media icons on the left-->
@@ -97,39 +103,11 @@
                     </a>
                 </div>
 
-                <!--newsletter sigup-->
+                
                 <div class="col-xl-6 col-12" id="footerCenter">
-                    <section class="">
-                        <form action=""> <!--add get method to con-->
-
-                            <div class="row d-flex justify-content-center">
-
-                                <div class="col-auto">
-                                    <p class="pt-2">
-                                        <strong>Sign up for our newsletter</strong>
-                                    </p>
-                                </div>
-
-                                <div class="col-md-5 col-12">
-
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="email" class="form-control" placeholder="example@com" />
-
-                                    </div>
-                                </div>
-
-                                <div class="col-auto">
-
-                                    <button type="submit" class="btn btn-outline-light mb-4">
-                                        Subscribe
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </form>
-                    </section>
+                   
                 </div>
+
                 <!--links to privacy, impressum etc on the right-->
                 <div class="col-xl-3 col-12" id="footerRight">
                     <a href="#">Privacy</a>
@@ -137,8 +115,10 @@
                 </div>
             </div>
         </div>
+        <div class="placeholder3"></div>
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            <p>© 2020 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
+            <div class="placeholder3"></div>
+            <p>2021 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
 
         </div>
     </footer>
@@ -146,19 +126,145 @@
 
     
     <script>
-    
-        var map = L.map('map'); 
+
+
+         
+
+        
+        var map = L.map('map', { zoomControl: false }); 
 
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=rtwXzaPknPj5CuAX8Sto', {
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>', 
-      
         }).addTo(map);
 
-        map.setZoom(14); //default zoom
+        map.setZoom(15); //default zoom
         
-               //JSON form open data hub
-            var xmlhttp = new XMLHttpRequest();
-            var url = "https://mobility.api.opendatahub.bz.it/v2/flat/BikesharingStation";
+        
+       
+        //div to which search results get appended
+        var resultDiv = document.getElementById("result-list");
+
+        function removeChildren(input) {
+            while (input.firstChild) {
+                input.removeChild(input.lastChild);
+            }
+        }
+
+       
+        function noResultInfo(){
+             var lineDiv = document.createElement("div");
+                            
+                            lineDiv.className += " result-line";
+                            lineDiv.innerHTML = "No results found...";
+                             resultDiv.appendChild(lineDiv);
+        }
+
+        document.body.setAttribute("onclick", "removeChildren(resultDiv)"); //closes Results onclick 
+   
+        function geocode() {
+
+            removeChildren(resultDiv);
+
+            var searchTerm = document.getElementById("searchInput").value;
+            
+
+
+            var xmlhttp1 = new XMLHttpRequest();
+            var url = "https://api.opencagedata.com/geocode/v1/json?key=3c38d15e76c02545181b07d3f8cfccf0&pretty=1&countrycode=it&q=" + searchTerm;
+
+            
+
+            var searchResults; //array containing result
+           
+
+            xmlhttp1.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    searchResult = JSON.parse(this.responseText);
+                    showResult();
+                }
+            };
+            xmlhttp1.open("GET", url, true);
+            xmlhttp1.send();
+
+
+            function showResult() {
+            var i = 0;
+            var stop = false;
+                while (i < 5 && stop == false) {
+                   
+                    if(typeof(searchResult.results[i]) == "undefined" ){
+                        if(i == 0){
+                           noResultInfo();
+                        }
+                       
+                        
+                        stop = true;
+
+                    }
+                    else{
+                        var formattedResult = searchResult.results[i].formatted;
+                        var long = searchResult.results[i].geometry.lng;
+                        var lat = searchResult.results[i].geometry.lat;
+                       
+
+                        var lineDiv = document.createElement("div");
+                        lineDiv.innerHTML = formattedResult;
+                        
+                        lineDiv.className += " result-line";
+                        lineDiv.setAttribute("onclick", "setSearchMarker(" + i + ")");
+                        var inputLong = document.createElement("input");
+                        inputLong.type="hidden";
+                        inputLong.value=long;
+                        inputLong.id="long" + i;
+
+                        var inputLat = document.createElement("input");
+                        inputLat.type="hidden";
+                        inputLat.value=lat;
+                        inputLat.id="lat" + i;
+                    
+                        lineDiv.appendChild(inputLong);
+                        lineDiv.appendChild(inputLat);
+
+                        resultDiv.appendChild(lineDiv);
+                    }
+
+                    i++;
+
+                }
+
+            }
+
+        }
+
+
+        var searchInputField = document.getElementById("searchInput");
+       
+        searchInputField.addEventListener("keyup", function(event) {
+             if (event.keyCode === 13) {
+                event.preventDefault();
+                geocode(); 
+             }
+        });
+    
+
+        var searchTerm = "<?php Print($_GET["search"])?>";
+
+            if(searchTerm == 'userPosition'){
+                getLocation();
+            }
+            else{
+             searchInputField.value = searchTerm;
+
+             geocode();
+            
+            }
+        
+        //JSON form open data hub
+        var xmlhttp = new XMLHttpRequest();
+        var url = "https://mobility.api.opendatahub.bz.it/v2/flat/BikesharingStation";
+        
+       
+
 
        
         var myArr;
@@ -232,14 +338,58 @@
 
 
         
-        function addPositionMarker(longIn, latIn){
-            var userPosition = L.marker([longIn, latIn]).addTo(map);
-            userPosition.bindPopup("<h6>Your are here!</h6>").openPopup(); 
-             map.setView([longIn, latIn]);
-        }
         
-       
+        
+        var positionMarkerLong;
+        var positionMarkerLat;
+        var countPositionChange = 0;
+        
+        function setSearchMarker(index){
+ 
+            var lat = document.getElementById("lat" + index).value;
+            var long = document.getElementById("long" + index).value;
 
+            
+            removeChildren(resultDiv);
+
+            addPositionMarker(lat, long);
+
+           
+           
+
+        }
+
+
+
+        function addPositionMarker(latIn, longIn){
+            
+        if(countPositionChange == 0){
+           
+        userPosition = L.marker([latIn, longIn]).addTo(map);
+        userPosition._icon.classList.add("userPositionMarker");
+            userPosition.bindPopup("<h6>Your are here!</h6>").openPopup(); 
+            
+            map.setView([latIn, longIn]);
+        }
+        else{
+           
+                userPosition.setLatLng([latIn,longIn]).openPopup;
+            
+             map.setView([latIn, longIn]);
+        }
+
+
+         countPositionChange++;
+         
+         
+         
+
+
+        }
+
+      
+        
+    
          function getLocation() {
            
      
@@ -248,29 +398,28 @@
         }
 
         function showPosition(position) {
-            var lat = position.coords.latitude;
-            var long = position.coords.longitude; 
-
-            addPositionMarker(lat, long);
+  
+            addPositionMarker(position.coords.latitude, position.coords.longitude);
         }
         
-        var searchInputField = document.getElementById("searchInput");
+
+        /*function setRoute(stationLat, stationLong){
+              userPos = userPosition.getLatLng();
+              if(userPos == 'undefined'){
+                     alert("Please specifie your position first");
+              }
+              else{
+                    L.Routing.control({
+                       waypoints:   [
+                       L.latLng(userPos),
+                       L.latLng(stationLat, stationLong)
+                       ]
+                    }).addTo(map);
+                }
+         
+             }
        
-     
-
-        var searchTerm = "<?php Print($_GET["search"])?>";
-
-            if(searchTerm == 'userPosition'){
-                getLocation();
-            }
-            else{
-             searchInputField.value = searchTerm;
-
-             //geacoding api gets searchTerm and returns lat & long 
-
-             // addPositonMarker(lat,long);
-            }
-      
+      */
         
        
 
