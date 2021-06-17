@@ -35,7 +35,7 @@
         
        
 
-        if(empty($firstname)){
+        if(!empty($firstname)){
             $name = $firstname;
         }
 

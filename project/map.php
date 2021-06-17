@@ -18,6 +18,8 @@
         <!-- no header-->
      </header>
 
+     <h1 hidden>accessibility</h1>
+
      <!--search bar start-->
 
      
@@ -49,6 +51,7 @@
                                     </div>
                                     <div id="result-list" class="text-start">
                                              </div>
+
                              </div>
 
                                 <div class="col-xl-2 col-lg-4 col-12 col-md-4">
@@ -86,26 +89,37 @@
             <div class="row">
                 <!--social media icons on the left-->
                 <div class="col-xl-3 col-12 " id="footerLeft">
-                    <a class="btn btn-outline-light btn-floating " href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating " href="#" role="button">
+                        <label hidden>Facebook Links</label>
                         <i class="fa fa-facebook-square"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Instagram Links</label>
                         <i class="fa fa-instagram"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Youtube Links</label>
                         <i class="fa fa-youtube-play"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>LinkedIn Links</label>
                         <i class="fa fa-linkedin-square"></i>
                     </a>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Twitter Links</label>
                         <i class="fa fa-twitter-square"></i>
                     </a>
                 </div>
 
                 
                 <div class="col-xl-6 col-12" id="footerCenter">
+
                    
+
+                    <section class="">
+                      
+                    </section>
+
                 </div>
 
                 <!--links to privacy, impressum etc on the right-->
@@ -117,8 +131,10 @@
         </div>
         <div class="placeholder3"></div>
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+
             <div class="placeholder3"></div>
             <p>2021 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
+
 
         </div>
     </footer>
