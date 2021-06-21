@@ -23,9 +23,10 @@
             $pwd="";
             $db="database";
 
-             $firstname = $_POST["firstname"];
-             $lastname = $_POST["lastname"];
-            $mail = $_POST["mail"];
+            $firstname = filter_var(addslashes($_POST["firstname"]), FILTER_SANITIZE_STRING);
+            $lastname = filter_var(addslashes($_POST["lastname"]), FILTER_SANITIZE_STRING);
+            $mail = filter_var(addslashes($_POST["mail"]), FILTER_SANITIZE_EMAIL);
+            
 
             $conn=mysqli_connect($host,$user,$pwd,$db) or die("Operation failed, please try again");
 
