@@ -1,5 +1,5 @@
 #sectionHeader {
-    background-image: url("pictures/slider1.jpg");
+    background-image: url("background/slider1.jpg");
     max-width: 2400px;
     background-position: center;
     margin: auto;
@@ -8,7 +8,7 @@
 }
 
 #sectionHeaderMap { 
-    background-image: url("pictures/bike_lanes.jpg");
+    background-image: url("background/bike_lanes.jpg");
     max-width: 2400px;
     background-position: center;
     margin: auto;
@@ -175,7 +175,7 @@ img.userPositionMarker {
         
 
         #sectionHeader {
-            background-image: url("pictures/slider1.jpg");
+            background-image: url("background/slider1.jpg");
             max-width: 2400px;
             background-position: center;
             margin: auto;

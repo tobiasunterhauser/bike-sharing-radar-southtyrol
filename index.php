@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> <!--bootstrap stylesheet-->
     <link rel="icon" href="pictures/icon.png" type="image" sizes="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--font awesome icons-->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body>
@@ -53,13 +53,14 @@
                     <h5 class=" display-6 align-middle color text-dark" id="mainHeader">Bike-Sharing Radar Southtyrol</h5>
                     <div class="placeholder3"></div>
 
+                    
                     <form class="input-group" id="searchField" target="_blank" action="map.php" method="GET">
-
-                        <input type="text" class="form-control rounded" autocomplete="off" placeholder="Streetname, City or zip code" name="search">
-                        <div class="input-group-append">
-                            <button class="btn btn-success shadow btn-lg" type="submit">Go</button>
-                        </div>
+                            <input type="text" class="form-control rounded" autocomplete="off" placeholder="Streetname, City or zip code" name="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-success shadow btn-lg" type="submit">Go</button>
+                            </div>
                     </form>
+                    
 
                     <div class="placeholder3"></div>
                     <h5 class="text-bold">
@@ -263,7 +264,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!--social media icons on the left-->
-                <div class="col-xl-3 col-12 " id="footerLeft">
+                <div class="col-xl-6 col-6 " id="footerLeft">
                     <a class="btn btn-outline-light btn-floating " href="#" role="button">
                         <label hidden>Facebook Link</label>
                         <i class="fa fa-facebook-square"></i>
@@ -286,13 +287,13 @@
                     </a>
                 </div>
 
-                
-                <div class="col-xl-6 col-12" id="footerCenter">
+                <!--
+                <div class="col-xl-6 col-6" id="footerCenter">
                    
-                </div>
+                </div>-->
 
                 <!--links to privacy, impressum etc on the right-->
-                <div class="col-xl-3 col-12" id="footerRight">
+                <div class="col-xl-6 col-6" id="footerRight">
                     <a href="#">Privacy</a>
                     <a href="#">Impressum</a>
                 </div>

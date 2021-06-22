@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--font awesome icons-->
     
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
      <header>
@@ -88,7 +88,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!--social media icons on the left-->
-                <div class="col-xl-3 col-12 " id="footerLeft">
+                <div class="col-xl-6 col-6 " id="footerLeft">
                     <a class="btn btn-outline-light btn-floating " href="#" role="button">
                         <label hidden>Facebook Links</label>
                         <i class="fa fa-facebook-square"></i>
@@ -111,8 +111,8 @@
                     </a>
                 </div>
 
-                
-                <div class="col-xl-6 col-12" id="footerCenter">
+                <!--
+                <div class="col-xl-6 col-6" id="footerCenter">
 
                    
 
@@ -120,10 +120,10 @@
                       
                     </section>
 
-                </div>
+                </div>-->
 
                 <!--links to privacy, impressum etc on the right-->
-                <div class="col-xl-3 col-12" id="footerRight">
+                <div class="col-xl-6 col-6" id="footerRight">
                     <a href="#">Privacy</a>
                     <a href="#">Impressum</a>
                 </div>
@@ -263,8 +263,10 @@
         });
     
 
-        var searchTerm = "<?php Print($_GET["search"])?>";
-
+        var searchTerm = "<?php 
+        $data = filter_var(addslashes($_GET["search"]), FILTER_SANITIZE_STRING);
+        Print($data);
+        ?>";
 
             if(searchTerm == 'userPosition'){
                 getLocation();
