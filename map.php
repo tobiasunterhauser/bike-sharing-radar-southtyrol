@@ -263,10 +263,8 @@
         });
     
 
-        var searchTerm = "<?php 
-        $data = filter_var(addslashes($_GET["search"]), FILTER_SANITIZE_STRING);
-        Print($data);
-        ?>";
+        var searchTerm = "<?php Print($_GET["search"])?>";
+
 
             if(searchTerm == 'userPosition'){
                 getLocation();
