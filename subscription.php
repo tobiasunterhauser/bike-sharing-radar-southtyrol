@@ -17,21 +17,18 @@
 
     <?php 
 
-        $host="localhost";
-        $user="root";
-        $pwd="";
-        $db="database";
+       
 
         $firstname = filter_var(addslashes($_POST["firstname"]), FILTER_SANITIZE_STRING);
         $lastname = filter_var(addslashes($_POST["lastname"]), FILTER_SANITIZE_STRING);
         $mail = filter_var(addslashes($_POST["mail"]), FILTER_SANITIZE_EMAIL);
         
+        $myPDO = new PDO('pgsql:host=ec2-34-254-120-2.eu-west-1.compute.amazonaws.com;dbname=dm33p451h4fua', 'kgubvonznsmufu', '29662366d8531bd0834598d64496ebddb140f4a0e589d8ddfa90b61118db228b');
+       
 
-        $conn=mysqli_connect($host,$user,$pwd,$db) or die("Operation failed, please try again");
+        
 
-        $insertData ="INSERT INTO subscriber VALUES (  \"$firstname\", \"$lastname\", \"$mail\")";
-
-        $insertDataEx = mysqli_query($conn, $insertData);
+        $insertDataEx = $myPDO->query("INSERT INTO subscriber VALUES (  \"$firstname\", \"$lastname\", \"$mail\")" );
 
         
        
