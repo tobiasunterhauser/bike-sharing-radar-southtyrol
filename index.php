@@ -202,7 +202,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <form action="subscription.php" method="POST">
+                    <form action="subscription.php" method="GET">
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-floating mb-3">

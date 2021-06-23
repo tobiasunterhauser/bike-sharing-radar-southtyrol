@@ -19,9 +19,9 @@
 
        
 
-        $firstname = filter_var(addslashes($_POST["firstname"]), FILTER_SANITIZE_STRING);
-        $lastname = filter_var(addslashes($_POST["lastname"]), FILTER_SANITIZE_STRING);
-        $mail = filter_var(addslashes($_POST["mail"]), FILTER_SANITIZE_EMAIL);
+        $firstname = filter_var(addslashes($_GET["firstname"]), FILTER_SANITIZE_STRING);
+        $lastname = filter_var(addslashes($_GET["lastname"]), FILTER_SANITIZE_STRING);
+        $mail = filter_var(addslashes($_GET["mail"]), FILTER_SANITIZE_EMAIL);
         
         $myPDO = new PDO('pgsql:host=ec2-34-254-120-2.eu-west-1.compute.amazonaws.com;dbname=dm33p451h4fua', 'kgubvonznsmufu', '29662366d8531bd0834598d64496ebddb140f4a0e589d8ddfa90b61118db228b');
        
