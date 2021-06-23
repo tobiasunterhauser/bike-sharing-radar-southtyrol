@@ -102,7 +102,7 @@
                 <p class="lead">In todays cities it´s very important to have some alternative means of transport. Our goal is to create a website that makes it easy to find Bike-sharing bikes. We have focused our service on Southtyrol only.</p>
             </div>
             <div class="col-md-6 col-lg-6">
-                <a href="#"><img alt="Example Map" src="pictures/exMap.png" class="shadow w-75 float-end rounded" /></a>
+                <a href="#"><img alt="Example Map" src="pictures/exMap.PNG" class="shadow w-75 float-end rounded" /></a>
             </div>
 
         </div>
