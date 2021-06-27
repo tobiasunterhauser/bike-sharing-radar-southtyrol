@@ -27,7 +27,7 @@
                     <a class="nav-link" href="#team" id="navItem">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="navItem">Map</a>
+                    <a class="nav-link" href="map.php?search=" id="navItem">Map</a>
                 </li>
 
             </ul>
@@ -202,7 +202,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <form action="subscription.php" method="GET">
+                    <form action="subscription.php" method="POST">
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-floating mb-3">

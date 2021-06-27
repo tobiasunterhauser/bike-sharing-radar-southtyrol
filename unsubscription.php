@@ -18,10 +18,11 @@
 
             <?php
 
-            $host="localhost";
-            $user="root";
-            $pwd="";
-            $db="database";
+            //jaw db
+            $host="yvu4xahse0smimsc.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+            $user="x8scjhot4cnz9dgf";
+            $pwd="hysm2e9cfr4zu5ou";
+            $db="ta6avmw4ldqgtzuz";
 
             $firstname = filter_var(addslashes($_POST["firstname"]), FILTER_SANITIZE_STRING);
             $lastname = filter_var(addslashes($_POST["lastname"]), FILTER_SANITIZE_STRING);
@@ -63,7 +64,7 @@
                         <div class="col-sm-6 col-12 text-start">
 
 
-                            <a href="home.html" class="btn btn-success ms-4 me-4">Go back</a>
+                            <a href="index.php" class="btn btn-success ms-4 me-4">Go back</a>
 
 
                         </div>

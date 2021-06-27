@@ -272,9 +272,14 @@
                 getLocation();
             }
             else{
-             searchInputField.value = searchTerm;
+             
 
-             geocode();
+             if(searchTerm.length > 2){
+                 searchInputField.value = searchTerm;
+                geocode();
+             }
+
+            
             
             }
         
@@ -422,23 +427,7 @@
         }
         
 
-        /*function setRoute(stationLat, stationLong){
-              userPos = userPosition.getLatLng();
-              if(userPos == 'undefined'){
-                     alert("Please specifie your position first");
-              }
-              else{
-                    L.Routing.control({
-                       waypoints:   [
-                       L.latLng(userPos),
-                       L.latLng(stationLat, stationLong)
-                       ]
-                    }).addTo(map);
-                }
-         
-             }
-       
-      */
+ 
         
        
 
