@@ -204,14 +204,14 @@
                 <div class="col-lg-4">
                     <form action="subscription.php" method="POST">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-sm-6 col-12">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingFirstName" name="firstname" placeholder="">
                                     <label for="floatingFirstName">Firstname</label>
                                 </div>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-sm-6 col-12">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingLastName" name="lastname" placeholder="">
                                     <label for="floatingLastName">Lastname</label>
@@ -227,7 +227,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-12 col-sm-8 mb-2">
                                 <span class="align-middle">
                                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
                                     <label class="form-check-label" for="defaultCheck1">
@@ -236,7 +236,7 @@
                                 </span>
                                 
                             </div>
-                            <div class="col-4">
+                            <div class="col-12 col-sm-4">
                                 <div class="pull-right">
                                     <button class="btn btn-success btn-lg" type="submit">Subscribe</button>
                                 </div>

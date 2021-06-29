@@ -324,7 +324,9 @@
                
         }
        
-        //function which adds line to table
+        
+  
+           //function which adds line to table
         function showThisLine(arrayLine) {
   
             var name = arrayLine.sname;
@@ -333,11 +335,13 @@
             var y = arrayLine.scoordinate.y;
             var srid = arrayLine.scoordinate.srid;
             var origin = arrayLine.sorigin;
-            //var bikesAvailable = myArr.data[i].smetadata.bikes.number - available;
+            var bikesAvailable;
             var municipality = arrayLine.smetadata.municipality;
             var sCode = arrayLine.scode;
             var totalBays = arrayLine.smetadata["total-bays"];
+            var address = arrayLine.smetadata["address"];
             var url;
+           
             
             if (origin == "BIKE_SHARING_BOLZANO") {
                 url = "https://bicibolzano.ecospazio.it/#/login";
@@ -345,16 +349,28 @@
             else if (origin == "BIKE_SHARING_PAPIN"){
                 url = "https://www.papinsport.com/";
             }
+           else if (origin == "ALGORAB"){
+                url = "https://www.comune.merano.bz.it/it/Bikesharing";
+                bikesAvailable = arrayLine.smetadata.bikes["number-available"];
+            }
             
             var bays_text = "";
             if(typeof totalBays != 'undefined'){
                 bays_text = "<a>Total Bays: " + totalBays + "</a><br>";
             }
+            
+            var address_text = "";
+            if(typeof address != 'undefined'){
+                address_text = "<a>Address: " + address + "</a><br>";
+            }
+
+             var available_text = "";
+            if(typeof bikesAvailable != 'undefined'){
+                available_text = "<a>Bikes available: " + bikesAvailable + "</a><br>";
+            }
 
 
-
-
-            var markerText = "<div class=\"text-center\"><h6>" + name + "</h6>" + bays_text + "<button class=\"btn btn-success btn-sm mt-2\" onclick=\"location.href='" + url + "'\">Link to Service</button></div>";
+            var markerText = "<div class=\"text-center\"><h6>" + name + "</h6>" + address_text + bays_text + available_text +  "<button class=\"btn btn-success btn-sm mt-2\" onclick=\"location.href='" + url + "'\">Link to Service</button></div>";
 
              var markerNew = L.marker([y, x]).addTo(map);
                 markerNew.bindPopup(markerText);

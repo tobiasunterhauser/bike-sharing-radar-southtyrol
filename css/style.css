@@ -7,13 +7,12 @@
 
 }
 
-#sectionHeaderMap { 
-    background-image: url("background/bike_lanes.jpg");
+#sectionHeaderMap {
+    background-image: url("background/slider1.jpg");
     max-width: 2400px;
     background-position: center;
     margin: auto;
     height: 100vh;
-    
 }
 
 
