@@ -88,42 +88,33 @@
         <div class="container-fluid">
             <div class="row">
                 <!--social media icons on the left-->
-                <div class="col-xl-6 col-6 " id="footerLeft">
-                    <a class="btn btn-outline-light btn-floating " href="#" role="button">
-                        <label hidden>Facebook Links</label>
+                <div class="col-xl-6 col-5 col-sm-5" id="footerLeft">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <label hidden>Facebook Link</label>
                         <i class="fa fa-facebook-square"></i>
                     </a>
                     <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
-                        <label hidden>Instagram Links</label>
+                        <label hidden>Instagram Link</label>
                         <i class="fa fa-instagram"></i>
                     </a>
                     <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
-                        <label hidden>Youtube Links</label>
+                        <label hidden>Youtube Link</label>
                         <i class="fa fa-youtube-play"></i>
                     </a>
                     <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
-                        <label hidden>LinkedIn Links</label>
+                        <label hidden>LinkedIn Link</label>
                         <i class="fa fa-linkedin-square"></i>
                     </a>
                     <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
-                        <label hidden>Twitter Links</label>
+                        <label hidden>Twitter Link</label>
                         <i class="fa fa-twitter-square"></i>
                     </a>
                 </div>
 
-                <!--
-                <div class="col-xl-6 col-6" id="footerCenter">
-
-                   
-
-                    <section class="">
-                      
-                    </section>
-
-                </div>-->
+        
 
                 <!--links to privacy, impressum etc on the right-->
-                <div class="col-xl-6 col-6" id="footerRight">
+                <div class="col-xl-6 col-7 col-sm-7" id="footerRight">
                     <a href="#">Privacy</a>
                     <a href="#">Impressum</a>
                 </div>
@@ -131,10 +122,8 @@
         </div>
         <div class="placeholder3"></div>
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-
             <div class="placeholder3"></div>
             <p>2021 Copyright: Jonas Gatterer & Tobias Unterhauser</p>
-
 
         </div>
     </footer>

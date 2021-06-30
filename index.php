@@ -54,11 +54,13 @@
                     <div class="placeholder3"></div>
 
                     
-                    <form class="input-group" id="searchField" target="_blank" action="map.php" method="GET">
+                    <form id="searchField" target="_blank" action="map.php" method="GET">
+                            <label class="input-group">
                             <input type="text" class="form-control rounded" autocomplete="off" placeholder="Streetname, City or zip code" name="search">
                             <div class="input-group-append">
                                 <button class="btn btn-success shadow btn-lg" type="submit">Go</button>
                             </div>
+                            </label>
                     </form>
                     
 
@@ -264,8 +266,8 @@
         <div class="container-fluid">
             <div class="row">
                 <!--social media icons on the left-->
-                <div class="col-xl-6 col-6 " id="footerLeft">
-                    <a class="btn btn-outline-light btn-floating " href="#" role="button">
+                <div class="col-xl-6 col-5 col-sm-5" id="footerLeft">
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
                         <label hidden>Facebook Link</label>
                         <i class="fa fa-facebook-square"></i>
                     </a>
@@ -287,13 +289,10 @@
                     </a>
                 </div>
 
-                <!--
-                <div class="col-xl-6 col-6" id="footerCenter">
-                   
-                </div>-->
+        
 
                 <!--links to privacy, impressum etc on the right-->
-                <div class="col-xl-6 col-6" id="footerRight">
+                <div class="col-xl-6 col-7 col-sm-7" id="footerRight">
                     <a href="#">Privacy</a>
                     <a href="#">Impressum</a>
                 </div>
